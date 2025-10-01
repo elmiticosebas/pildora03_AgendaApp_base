@@ -10,6 +10,6 @@ public class Person extends Contact {
     }
 
     public String getName() {
-        return firstName + lastName;
+        return firstName + " " + lastName;
     }
 }
