@@ -6,11 +6,10 @@ public abstract class Contact {
     String telephone;
     String email;
     Address address;
-    ArrayList<Group> groups;
-    public Contact(String telephone, String email, Address address) {
+    public Contact(String telephone, String email, String street, int number, int floor, String city) {
         this.telephone = telephone;
         this.email = email;
-        this.address = address;
+        this.address = new Address(street, number, floor, city);
     }
     public String getTelephone() {
         return this.telephone;
