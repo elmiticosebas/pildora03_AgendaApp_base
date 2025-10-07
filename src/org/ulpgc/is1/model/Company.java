@@ -1,5 +1,7 @@
 package org.ulpgc.is1.model;
 
+import java.util.Objects;
+
 public class Company extends Contact {
     String name;
     String description;
@@ -8,6 +10,12 @@ public class Company extends Contact {
         super(telephone, email, street, number, floor, city);
         this.name = name;
         this.description = description;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Company company)) return false;
+        return Objects.equals(name, company.name) && Objects.equals(description, company.description);
     }
 
     public String getName() {

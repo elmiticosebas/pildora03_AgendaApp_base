@@ -11,6 +11,7 @@ public abstract class Contact {
         this.email = email;
         this.address = new Address(street, number, floor, city);
     }
+
     public String getTelephone() {
         return this.telephone;
     }

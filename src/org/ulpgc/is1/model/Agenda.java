@@ -12,12 +12,18 @@ public class Agenda {
 
     public void addPerson(String firstName, String lastName, String telephone, String email, String street, int number, int floor, String city) {
         Person newperson = new Person(firstName, lastName, telephone, email, street, number, floor, city);
+        for (Contact contact : contacts) {
+            if(contact.equals(newperson)) return;
+        }
         this.contacts.add(newperson);
     }
 
     public void addCompany(String name, String description, String telephone, String email, String street, int number, int floor, String city) {
-        Company company = new Company(name, description, telephone, email, street, number, floor, city);
-        this.contacts.add(company);
+        Company newcompany = new Company(name, description, telephone, email, street, number, floor, city);
+        for (Contact contact : contacts) {
+            if (contact.equals(newcompany)) return;
+        }
+        this.contacts.add(newcompany);
     }
 
     public void addGroup(String name) {
