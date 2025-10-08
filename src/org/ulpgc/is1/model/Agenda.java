@@ -5,9 +5,11 @@ import java.util.ArrayList;
 public class Agenda {
     ArrayList<Contact> contacts;
     ArrayList<Group> groups;
+    ArrayList<Member> members;
     public Agenda() {
         this.contacts = new ArrayList<>();
         this.groups = new ArrayList<>();
+        this.members = new ArrayList<>();
     }
 
     public void addPerson(String firstName, String lastName, String telephone, String email, String street, int number, int floor, String city) {
@@ -41,5 +43,10 @@ public class Agenda {
 
     public int contactCount() {
         return contacts.size();
+    }
+
+    public void addMember2Group(Contact contact, Group group) {
+        Member newMember = new Member(contact, group);
+        this.members.add(newMember);
     }
 }
